@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recomendaciones | Regular para la Paz</title>
+    <link rel="icon" href="./media/logo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Acme&family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos generales */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Work Sans', sans-serif;
+            color: #333;
+            background-color: #fff;
+        }
+
+        /* Header (idéntico a las otras páginas) */
+        header {
+          background-color: #f9f7e4;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          z-index: 1000;
+          box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .menu {
+          display: flex;
+          justify-content: space-between;
+          padding: 0px 30px 0px 0;
+          align-items: center;
+        }
+
+        .logo {
+          max-height: 100px;
+        }
+        
+        .select_menu {
+          display: flex;
+          grid-column-gap: 20px;
+        }
+
+        .menu_derecho {
+          display: none;
+        }
+
+        @media (max-width: 1000px) {
+          .select_menu {
+            display: none;
+          }
+          .menu_derecho {
+            display: block;
+          }
+        } 
+
+        .select {
+          text-decoration: none;
+          font-family: "Work Sans", sans-serif;
+          font-weight: 600;
+          color: #167943;
+          padding: 10px 15px;
+          transition: all 0.3s ease;
+          border-radius: 5px;
+        }
+
+        .select:hover {
+          background-color: #167943;
+          color: white;
+        }
+
+        .des_menu {
+          width: 2rem;
+          height: 2rem;
+          cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./media/flores.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 50vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding-top: 100px;
+            box-sizing: border-box;
+        }
+
+        .hero h1 {
+            font-family: 'Acme', sans-serif;
+            font-size: 3rem;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Contenido principal */
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            padding-top: 30px;
+        }
+
+        .intro {
+            background-color: #f9f7e4;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 3rem;
+            border-left: 5px solid #2E5E3A;
+        }
+
+            /* Estilos para el contenedor del video */
+        .video-container {
+            max-width: 400px; /* Ajusta según necesidad */
+            margin: 20px auto;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Estilos para video vertical */
+        .vertical-video {
+            width: 100%;
+            height: auto;
+            display: block;
+            background-color: #000;
+        }
+
+        /* Ajustes responsive */
+        @media (max-width: 768px) {
+            .video-container {
+                max-width: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .video-container {
+                max-width: 250px;
+            }
+        }
+
+        /* Recomendaciones */
+        .recommendations {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .recommendation-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-top: 5px solid #A5C882;
+            transition: transform 0.3s ease;
+        }
+
+        .recommendation-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .recommendation-card h3 {
+            color: #2E5E3A;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .recommendation-card h3 span {
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2E5E3A;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .intro {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+      <div id="menu" class="menu">
+        <img class="logo" src="./media/logo.png" alt="Logo Regular para la Paz">
+        <div>
+          <div class="menu_derecho">
+            <img class="des_menu" src="./media/navigation-menu.svg" alt="Menú">
+          </div>
+
+          <div class="select_menu">
+            <a class="select" href="index.html">INICIO</a>
+            <a class="select" href="contexto.html">CONTEXTO REGIONAL</a>
+            <a class="select" href="experiencias.html">EXPERIENCIAS</a>
+            <a class="select" href="recomendaciones.html">RECOMENDACIONES</a>
+            <a class="select" href="#contact">CONTÁCTANOS</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    
+    <div class="hero">
+        <h1>Recomendaciones Clave</h1>
+        <p>Propuestas para una regulación con enfoque de paz</p>
+    </div>
+
+    <main>
+        <section class="intro">
+            <h2>Propuesta de Regulación</h2>
+            <div class="video-container">
+                <video controls class="vertical-video">
+                    <source src="./media/avatar.mp4" type="video/mp4">
+                    Tu navegador no soporta el elemento de video.
+                </video>
+            </div>
+        </section>
+        <div class="recommendations">
+            <div class="recommendation-card">
+                <h3><span>1</span> Focalización con enfoque de reparación</h3>
+                <p>Priorizar licencias para pequeños cultivadores preexistentes y eliminar antecedentes penales por delitos asociados al cannabis. Reparar a quienes han sufrido el rigor del prohibicionismo.</p>
+            </div>
+
+            <div class="recommendation-card">
+                <h3><span>2</span> Mercado justo</h3>
+                <p>Invertir los márgenes de ganancia tradicionales para que los productores reciban mayor porcentaje de las rentas. Crear figuras jurídicas regionales (cooperativas) para administrar la cadena de valor.</p>
+            </div>
+
+            <div class="recommendation-card">
+                <h3><span>3</span> Equidad de género</h3>
+                <p>Garantizar acceso equitativo a tierra, remuneración justa y participación en decisiones para mujeres cultivadoras, "desmoñadoras" y "peluqueras" en la cadena productiva.</p>
+            </div>
+
+            <div class="recommendation-card">
+                <h3><span>4</span> Cuidado ambiental</h3>
+                <p>Promover prácticas sostenibles que reduzcan agroquímicos, protejan fuentes de agua y biodiversidad. Uso de materiales biodegradables en empaques y procesos.</p>
+            </div>
+
+            <div class="recommendation-card">
+                <h3><span>5</span> Soberanía alimentaria</h3>
+                <p>Evitar el monocultivo mediante diversificación productiva. Combinar cannabis con cultivos alimentarios y recuperación de conocimientos tradicionales.</p>
+            </div>
+
+            <div class="recommendation-card">
+                <h3><span>6</span> Vinculación en reincorporación</h3>
+                <p>Incluir a personas en proceso de reincorporación en actividades legales de la cadena productiva (cultivo, procesamiento, distribución) como alternativa económica.</p>
+            </div>
+        </div>
+
+        <section class="intro" style="background-color: #e8f1e2; border-left-color: #D4B483;">
+            <h2>Implementación</h2>
+            <p>Estas recomendaciones requieren articulación entre: productores organizados, autoridades indígenas, instituciones locales y nacionales, y organizaciones de la sociedad civil. Se propone crear mesas de trabajo regionales para desarrollar planes concretos en cada eje.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Regular para la Paz - Basado en el Policy Brief del Instituto CAPAZ</p>
+        <p>Licencia Creative Commons BY-NC-SA 4.0</p>
+        <p>Contacto: info@regularparalapaz.org</p>
+    </footer>
+
+        <script src="script.js"></script>
+
+</body>
+</html>

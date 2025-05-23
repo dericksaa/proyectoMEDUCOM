@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitios de Interés | Regular para la Paz</title>
+    <link rel="icon" href="./media/logo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Acme&family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos generales */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Work Sans', sans-serif;
+            color: #333;
+            background-color: #fff;
+        }
+
+        /* Header (idéntico a las otras páginas) */
+        header {
+          background-color: #f9f7e4;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          z-index: 1000;
+          box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .menu {
+          display: flex;
+          justify-content: space-between;
+          padding: 0px 30px 0px 0;
+          align-items: center;
+        }
+
+        .logo {
+          max-height: 100px;
+        }
+        
+        .select_menu {
+          display: flex;
+          grid-column-gap: 20px;
+        }
+
+        .menu_derecho {
+          display: none;
+        }
+
+        @media (max-width: 1000px) {
+          .select_menu {
+            display: none;
+          }
+          .menu_derecho {
+            display: block;
+          }
+        } 
+
+        .select {
+          text-decoration: none;
+          font-family: "Work Sans", sans-serif;
+          font-weight: 600;
+          color: #167943;
+          padding: 10px 15px;
+          transition: all 0.3s ease;
+          border-radius: 5px;
+        }
+
+        .select:hover {
+          background-color: #167943;
+          color: white;
+        }
+
+        .des_menu {
+          width: 2rem;
+          height: 2rem;
+          cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./media/flores.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 50vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding-top: 100px;
+            box-sizing: border-box;
+        }
+
+        .hero h1 {
+            font-family: 'Acme', sans-serif;
+            font-size: 3rem;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Contenido principal */
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            padding-top: 30px;
+        }
+
+        .intro {
+            background-color: #f9f7e4;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 3rem;
+            border-left: 5px solid #2E5E3A;
+        }
+
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            border: 1px solid #e0e0e0;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card h3 {
+            color: #2E5E3A;
+            margin-top: 0;
+        }
+
+        .card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #2E5E3A;
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #167943;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2E5E3A;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .intro {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+      <div id="menu" class="menu">
+        <img class="logo" src="./media/logo.png" alt="Logo Regular para la Paz">
+        <div>
+          <div class="menu_derecho">
+            <img class="des_menu" src="./media/navigation-menu.svg" alt="Menú">
+          </div>
+
+          <div class="select_menu">
+            <a class="select" href="index.html">INICIO</a>
+            <a class="select" href="contexto.html">CONTEXTO REGIONAL</a>
+            <a class="select" href="experiencias.html">EXPERIENCIAS</a>
+            <a class="select" href="recomendaciones.html">RECOMENDACIONES</a>
+            <a class="select" href="#contact">CONTÁCTANOS</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    
+    <div class="hero">
+        <h1>Experiencias y Modelos de Regulación</h1>
+        <p>Conoce las iniciativas locales e internacionales</p>
+    </div>
+
+    <main>
+        <section class="intro">
+            <h2>Resumen del Proyecto</h2>
+            <p>Esta iniciativa analiza los aspectos clave para construir un modelo alternativo de regulación del cannabis de uso adulto en Colombia, centrado en la participación de pequeños productores del norte del Cauca. El proyecto busca trascender el paradigma prohibicionista, involucrando a los cultivadores históricamente afectados y promoviendo un enfoque de reparación y construcción de paz.</p>
+        </section>
+
+        <div class="card-container">
+            <div class="card">
+                <img src="./media/montevideo.png" alt="Cultivo regulado en Uruguay">
+                <div class="card-content">
+                    <h3>Experiencias Internacionales</h3>
+                    <p>Canadá, Uruguay y 21 jurisdicciones de EE.UU. han implementado modelos de regulación centrados en salud pública y crecimiento económico, con enfoques recientes de reparación a víctimas de la guerra contra las drogas.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="./media/gremio.png" alt="Reunión de cultivadores">
+                <div class="card-content">
+                    <h3>Gremio de Cultivadores</h3>
+                    <p>Organización de pequeños productores del Cauca que ha establecido acuerdos sobre tamaño de cultivos, uso de recursos y precios justos, buscando participación en la política nacional de drogas.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="./media/cric.png" alt="Autoridades indígenas">
+                <div class="card-content">
+                    <h3>Regulación Étnica</h3>
+                    <p>Las autoridades indígenas del Cauca han desarrollado iniciativas de control y sustitución de cultivos, buscando equilibrar autonomía territorial con alternativas económicas viables.</p>
+                </div>
+            </div>
+        </div>
+
+        <section class="intro" style="background-color: #e8f1e2; border-left-color: #A5C882;">
+            <h2>Organizaciones Relacionadas</h2>
+            <p>Estas son algunas de las entidades clave en el proceso de regulación:</p>
+            <ul>
+                <li>Gremio de Cultivadores y Cultivadoras de Cannabis del Norte del Cauca</li>
+                <li>Consejo Regional Indígena del Cauca (CRIC)</li>
+                <li>Corporación Ensayos para la Promoción de la Cultura Política</li>
+                <li>Instituto Colombo-Alemán para la Paz - CAPAZ</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Regular para la Paz - Basado en el Policy Brief del Instituto CAPAZ</p>
+        <p>Licencia Creative Commons BY-NC-SA 4.0</p>
+        <p>Contacto: info@regularparalapaz.org</p>
+    </footer>
+
+       <script src="script.js"></script>
+</body>
+</html>

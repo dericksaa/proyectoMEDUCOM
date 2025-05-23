@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contexto Regional | Regular para la Paz</title>
+    <link rel="icon" href="./media/logo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Acme&family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* Estilos del header (según tu especificación) */
+        .menu {
+          display: flex;
+          justify-content: space-between;
+          padding: 0px 30px 0px 0;
+          align-items: center;
+          background-color: #f9f7e4;
+        }
+
+        .logo {
+          max-height: 100px;
+        }
+        
+        .select_menu {
+          display: flex;
+          grid-column-gap: 20px;
+        }
+
+        .select_menu_mobile {
+          display: none;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .menu_derecho {
+          display: none;
+        }
+
+        @media (max-width: 1000px) {
+          .select_menu {
+            display: none;
+          }
+          .menu_derecho {
+            display: block;
+          }
+        } 
+
+        .select {
+          text-decoration: none;
+          font-family: "Work Sans", sans-serif;
+          font-weight: 600;
+          color: #167943;
+          padding: 10px 15px;
+          transition: all 0.3s ease;
+          border-radius: 5px;
+        }
+
+        .select:hover {
+          background-color: #167943;
+          color: white;
+        }
+
+        .des_menu {
+          width: 2rem;
+          height: 2rem;
+          cursor: pointer;
+        }
+
+        header {
+          background-color: #f9f7e4;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          z-index: 1000;
+          box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* Ajuste para el contenido principal (evitar que quede detrás del header fijo) */
+        main {
+          margin-top: 100px;
+        }
+
+        /* Estilos del resto de la página (conservando tu estructura anterior) */
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+            background-color: white;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./media/flores.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin-bottom: 1rem;
+        }
+        
+        /* Contenido principal */
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        
+        .section {
+            margin-bottom: 3rem;
+        }
+        
+        .section h2 {
+            color: #2E5E3A;
+            border-bottom: 2px solid #D4B483;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+ /* Contenedor del mapa */
+    .map-container {
+        background-color: #f5f5f5;
+        padding: 1.5rem;
+        border-radius: 10px;
+        margin: 2rem 0;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Estilos para el iframe del mapa */
+    .map-container iframe {
+        width: 100%;
+        height: 450px;
+        border-radius: 8px;
+        border: 1px solid #d4b483;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        display: block;
+    }
+
+    /* Leyenda del mapa (opcional) */
+    .map-legend {
+        background-color: rgba(255,255,255,0.9);
+        padding: 0.8rem;
+        border-radius: 5px;
+        position: absolute;
+        bottom: 2rem;
+        right: 2rem;
+        font-size: 0.9rem;
+        z-index: 10;
+    }
+
+    .map-legend span {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        margin-right: 5px;
+        border-radius: 50%;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .map-container {
+            padding: 0.8rem;
+        }
+        
+        .map-container iframe {
+            height: 350px;
+        }
+        
+        .map-legend {
+            bottom: 1rem;
+            right: 1rem;
+            font-size: 0.8rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .map-container iframe {
+            height: 250px;
+        }
+        
+        .map-legend {
+            position: static;
+            margin-top: 0.8rem;
+            text-align: center;
+        }
+    }
+        /* Testimonios */
+        .testimonial {
+            background-color: #D4B483;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            text-align: right;
+            margin-top: 1rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #2E5E3A;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+        
+        footer p {
+            margin: 0.5rem 0;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header con tu diseño específico -->
+    <header>
+      <div id="menu" class="menu">
+          <img class="logo" src="./media/logo.png" alt="Logo Cannabis para la Paz" />
+          <div>
+            <div class="menu_derecho">
+              <img class="des_menu" src="./media/navigation-menu.svg" alt="Menú" />
+            </div>
+
+            <div class="select_menu">
+            <a class="select" href="index.html">INICIO</a>
+            <a class="select" href="contexto.html">CONTEXTO REGIONAL</a>
+            <a class="select" href="experiencias.html">EXPERIENCIAS</a>
+            <a class="select" href="recomendaciones.html">RECOMENDACIONES</a>
+            <a class="select" href="#contact">CONTÁCTANOS</a>
+            </div>
+          </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div>
+            <h1>El Cannabis en el Norte del Cauca</h1>
+            <p>Historia, conflicto y oportunidades para la paz</p>
+        </div>
+    </section>
+
+    <!-- Contenido principal -->
+    <main class="container">
+        <section class="section">
+            <h2>Contexto Histórico</h2>
+            <p>El norte del Cauca es una región multicultural, habitada por población indígena, campesina y afrodescendiente, donde la mayoría de habitantes vive en zonas rurales. Su historia ha estado marcada por una profunda inequidad en la distribución de la tierra y por la presencia del conflicto armado.</p>
+            
+            <p>Desde los años 70, con la "bonanza marimbera", los primeros cultivos de cannabis se establecieron en municipios como Corinto y Toribio. La variedad "corinteña" se transportaba hacia la costa caribe y luego hacia EE.UU.</p>
+        </section>
+
+        <section class="section">
+            <h2>Municipios Productores</h2>
+            <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d255009.03241708607!2d-76.43010744301581!3d2.95417876819104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1snorte%20del%20cauca!5e0!3m2!1ses!2sco!4v1747971374783!5m2!1ses!2sco" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                <!-- Leyenda opcional -->
+                <div class="map-legend">
+                    <p><strong>Zona de cultivos:</strong></p>
+                    <p><span style="background-color: #2E5E3A;"></span> Toribío</p>
+                    <p><span style="background-color: #2E5E3A;"></span> Jambaló</p>
+                    <p><span style="background-color: #2E5E3A;"></span> Corinto</p>
+                    <p><span style="background-color: #2E5E3A;"></span> Caloto</p>
+                    <p><span style="background-color: #2E5E3A;"></span> Miranda</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Impacto Económico</h2>
+            <p>Con la introducción de la variedad conocida como "creepy", el cultivo de cannabis llegó a alcanzar un precio de venta cercano a los 400.000 pesos por libra, superando los ingresos generados por productos tradicionales como el café.</p>
+            
+            <p>Se estima que actualmente hay unos 15.000 productores en los cinco municipios principales, lo que ha transformado las dinámicas sociales y económicas de la región.</p>
+        </section>
+
+        <section class="section">
+            <h2>Voces de la Comunidad</h2>
+            <div class="testimonial">
+                <p>"El enfoque que nosotros hemos pedido de esta
+                    nueva política de drogas es un enfoque que sea
+                    para el cuidado de la vida, no una regulación
+                    para negocio sino una regulación para la paz"</p>
+                <div class="testimonial-author">- Luis Muelas, productor de Toribío</div>
+            </div>
+            
+            <div class="testimonial">
+                <p>"El cannabis ha permitido que nuestras familias tengan ingresos, pero necesitamos apoyo para tecnificar nuestros cultivos y acceder a mercados justos."</p>
+                <div class="testimonial-author">- María Fernández, cultivadora de Corinto</div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Cannabis para la Paz - Basado en el Policy Brief del Instituto CAPAZ</p>
+        <p>Licencia Creative Commons BY-NC-SA 4.0</p>
+        <p>Contacto: info@cannabisparalapaz.org</p>
+    </footer>
+
+    <!-- Script para el menú móvil (opcional) -->
+    <script src="script.js"></script>
+</body>
+</html>
