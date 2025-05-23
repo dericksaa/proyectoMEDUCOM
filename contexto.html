@@ -95,7 +95,7 @@
         
         /* Hero Section */
         .hero {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./media/flores.jpg');
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./media/morada.jpeg');
             background-size: cover;
             background-position: center;
             height: 50vh;
@@ -199,20 +199,55 @@
             text-align: center;
         }
     }
-        /* Testimonios */
-        .testimonial {
-            background-color: #D4B483;
-            padding: 1.5rem;
-            border-radius: 10px;
-            margin-bottom: 1rem;
-            font-style: italic;
+/* Estilos existentes del testimonio (conservados) */
+    .testimonial {
+        background-color: #D4B483;
+        padding: 1.5rem;
+        border-radius: 10px;
+        margin-bottom: 1rem;
+        font-style: italic;
+    }
+
+    .testimonial-author {
+        font-weight: bold;
+        text-align: right;
+        margin-top: 1rem;
+    }
+
+    /* Estilos para el reproductor de audio */
+    .audio-container {
+        margin-top: 1.5rem;
+        padding-top: 1rem;
+        border-top: 1px dashed rgba(0,0,0,0.2);
+    }
+
+    .audio-label {
+        font-style: normal;
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+        color: #5a4a3a;
+    }
+
+    .testimonial-audio {
+        width: 100%;
+        max-width: 300px;
+        height: 40px;
+        margin: 0 auto;
+        display: block;
+    }
+
+    /* Estilos para el control de audio en navegadores modernos */
+    .testimonial-audio::-webkit-media-controls-panel {
+        background-color: #f9f7e4;
+        border-radius: 20px;
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+        .testimonial-audio {
+            max-width: 100%;
         }
-        
-        .testimonial-author {
-            font-weight: bold;
-            text-align: right;
-            margin-top: 1rem;
-        }
+    }
         
         /* Footer */
         footer {
@@ -250,7 +285,7 @@
             <a class="select" href="contexto.html">CONTEXTO REGIONAL</a>
             <a class="select" href="experiencias.html">EXPERIENCIAS</a>
             <a class="select" href="recomendaciones.html">RECOMENDACIONES</a>
-            <a class="select" href="#contact">CONTÁCTANOS</a>
+            <a class="select" href="autor.html">ACERCA DEL AUTOR</a>
             </div>
           </div>
         </div>
@@ -303,11 +338,26 @@
                     para el cuidado de la vida, no una regulación
                     para negocio sino una regulación para la paz"</p>
                 <div class="testimonial-author">- Luis Muelas, productor de Toribío</div>
+                <div class="audio-container">
+                    <p class="audio-label">Escuchar testimonio:</p>
+                    <audio controls class="testimonial-audio">
+                        <source src="./media/audio2.m4a" type="audio/mpeg">
+                        Tu navegador no soporta el elemento de audio.
+                    </audio>
+                </div>
             </div>
             
             <div class="testimonial">
                 <p>"El cannabis ha permitido que nuestras familias tengan ingresos, pero necesitamos apoyo para tecnificar nuestros cultivos y acceder a mercados justos."</p>
                 <div class="testimonial-author">- María Fernández, cultivadora de Corinto</div>
+                
+                <div class="audio-container">
+                    <p class="audio-label">Escuchar testimonio:</p>
+                    <audio controls class="testimonial-audio">
+                        <source src="./media/audio1.m4a" type="audio/mpeg">
+                        Tu navegador no soporta el elemento de audio.
+                    </audio>
+                </div>
             </div>
         </section>
     </main>
